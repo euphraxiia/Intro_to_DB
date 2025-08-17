@@ -5,7 +5,6 @@ This script handles database creation with proper error handling and connection 
 """
 
 import mysql.connector
-from mysql.connector import Error
 
 
 def create_database():
@@ -33,7 +32,7 @@ def create_database():
             # Print success message
             print("Database 'alx_book_store' created successfully!")
             
-    except Error as e:
+    except mysql.connector.Error as e:
         # Handle and print error messages
         print(f"Error while connecting to MySQL: {e}")
         
